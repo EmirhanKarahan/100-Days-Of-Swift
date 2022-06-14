@@ -21,6 +21,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         countries = ["estonia", "france", "germany", "ireland", "italy", "monaco", "nigeria", "poland", "russia", "spain", "uk", "us"]
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .bookmarks, target: self, action: #selector(showScore))
         
         button1.layer.borderWidth = 1
         button2.layer.borderWidth = 1
@@ -35,6 +36,12 @@ class ViewController: UIViewController {
         askQuestion()
     }
     
+    @objc func showScore(){
+        let ac = UIAlertController(title: "Your score is 2", message: nil, preferredStyle: .alert)
+        ac.addAction(UIAlertAction(title: "Okay", style: .default))
+        present(ac, animated: true)
+    }
+    
     func askQuestion(action:UIAlertAction! = nil) {
         countries.shuffle()
         correctAnswer = Int.random(in: 0...2)
@@ -42,7 +49,7 @@ class ViewController: UIViewController {
         button1.setImage(UIImage(named: countries[0]), for: .normal)
         button2.setImage(UIImage(named: countries[1]), for: .normal)
         button3.setImage(UIImage(named: countries[2]), for: .normal)
-        self.title = "\(countries[correctAnswer].uppercased()) -- Score: \(score) -- \(questionsAsked)/10"
+        self.title = "Select \(countries[correctAnswer].uppercased()) -- Score: \(score) -- \(questionsAsked)/10"
     }
     
     @IBAction func buttonTapped(_ sender: UIButton) {
