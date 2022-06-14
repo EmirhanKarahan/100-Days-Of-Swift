@@ -15,6 +15,7 @@ class ViewController: UITableViewController {
         
         self.title = "Storm Viewer"
         navigationController?.navigationBar.prefersLargeTitles = true
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .action, target: self, action: #selector(recommendApp))
         
         let fm = FileManager.default
         let path = Bundle.main.resourcePath!
@@ -26,6 +27,12 @@ class ViewController: UITableViewController {
             }
         }
         
+    }
+    
+    @objc func recommendApp(){
+        let vc = UIActivityViewController(activityItems: ["Download the Storm Viewer App from App Store"], applicationActivities: [])
+        vc.popoverPresentationController?.barButtonItem = navigationItem.rightBarButtonItem
+        present(vc, animated: true)
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
