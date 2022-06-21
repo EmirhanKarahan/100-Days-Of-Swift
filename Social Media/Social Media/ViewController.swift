@@ -1,6 +1,6 @@
 //
 //  ViewController.swift
-//  Storm Viewer
+//  Social Media
 //
 //  Created by Emirhan KARAHAN on 10.06.2022.
 //
@@ -13,8 +13,9 @@ class ViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.title = "Storm Viewer"
+        self.title = "Social Media"
         navigationController?.navigationBar.prefersLargeTitles = true
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .action, target: self, action: #selector(recommendApp))
         
         let fm = FileManager.default
         let path = Bundle.main.resourcePath!
@@ -26,6 +27,12 @@ class ViewController: UITableViewController {
             }
         }
         
+    }
+    
+    @objc func recommendApp(){
+        let vc = UIActivityViewController(activityItems: ["Download the Storm Viewer App from App Store"], applicationActivities: [])
+        vc.popoverPresentationController?.barButtonItem = navigationItem.rightBarButtonItem
+        present(vc, animated: true)
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
