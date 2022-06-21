@@ -11,7 +11,7 @@
         <!--View Controller-->
         <scene sceneID="HfD-Lc-g9C">
             <objects>
-                <tableViewController id="aId-JR-Mk6" customClass="ViewController" customModule="Storm_Viewer" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="aId-JR-Mk6" customClass="ViewController" customModule="Social_Media" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="ewC-Mp-3yr">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -49,7 +49,7 @@
         <!--Detail View Controller-->
         <scene sceneID="u5x-uz-AlH">
             <objects>
-                <viewController storyboardIdentifier="Detail" id="UlJ-uy-8Au" customClass="DetailViewController" customModule="Storm_Viewer" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Detail" id="UlJ-uy-8Au" customClass="DetailViewController" customModule="Social_Media" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="nbw-WL-QpP">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
