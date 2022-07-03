@@ -10,6 +10,9 @@ import CoreImage
 import UIKit
 
 class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    
+    // MARK: - Challenge 3
+    @IBOutlet var radius: UISlider!
     @IBOutlet var imageView: UIImageView!
     @IBOutlet var intensity: UISlider!
     @IBOutlet var filterButton: UIButton!
@@ -54,6 +57,11 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         applyProcessing()
     }
     
+    // MARK: - Challenge 3
+    @IBAction func radiusChanged(_ sender: Any) {
+        applyProcessing()
+    }
+    
     @objc func importPicture() {
         let picker = UIImagePickerController()
         picker.allowsEditing = true
@@ -80,7 +88,8 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         guard let outputImage = currentFilter.outputImage else { return }
         
         if inputKeys.contains(kCIInputIntensityKey) { currentFilter.setValue(intensity.value, forKey: kCIInputIntensityKey) }
-        if inputKeys.contains(kCIInputRadiusKey) { currentFilter.setValue(intensity.value * 200, forKey: kCIInputRadiusKey) }
+        // MARK: - Challenge 3
+        if inputKeys.contains(kCIInputRadiusKey) { currentFilter.setValue(radius.value * 200, forKey: kCIInputRadiusKey) }
         if inputKeys.contains(kCIInputScaleKey) { currentFilter.setValue(intensity.value * 10, forKey: kCIInputScaleKey) }
         if inputKeys.contains(kCIInputCenterKey) { currentFilter.setValue(CIVector(x: currentImage.size.width / 2, y: currentImage.size.height / 2), forKey: kCIInputCenterKey) }
         
@@ -88,6 +97,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
             let processedImage = UIImage(cgImage: cgimg)
             self.imageView.image = processedImage
         }
+        
     }
     
     

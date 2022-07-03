@@ -40,7 +40,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="w7V-Uj-DDf">
-                                <rect key="frame" x="100" y="753" width="293" height="31"/>
+                                <rect key="frame" x="100" y="753" width="293" height="31.5"/>
                                 <connections>
                                     <action selector="intensityChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="cHF-35-5hc"/>
                                 </connections>
@@ -56,15 +56,16 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Radius:" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sfL-Oh-zHG">
-                                <rect key="frame" x="20" y="791" width="72" height="21"/>
+                                <rect key="frame" x="20" y="791" width="72" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="8BL-Wv-Uwy">
-                                <rect key="frame" x="100" y="786" width="293" height="31"/>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="8BL-Wv-Uwy" userLabel="Radius">
+                                <rect key="frame" x="100" y="786.5" width="293" height="30.5"/>
                                 <connections>
                                     <action selector="intensityChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="qcM-2F-U7d"/>
+                                    <action selector="radiusChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="7Hj-2g-grA"/>
                                 </connections>
                             </slider>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6CA-6r-bDR">
@@ -111,6 +112,7 @@
                         <outlet property="filterButton" destination="XLQ-qb-Lrg" id="2dm-Lq-o2O"/>
                         <outlet property="imageView" destination="icN-68-0cf" id="p4E-gR-eIR"/>
                         <outlet property="intensity" destination="w7V-Uj-DDf" id="WX0-oC-VYm"/>
+                        <outlet property="radius" destination="8BL-Wv-Uwy" id="edx-NC-VAR"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
